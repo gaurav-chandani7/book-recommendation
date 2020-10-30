@@ -1,6 +1,7 @@
 import pandas as pd
 from flask import Flask, request
 import pickle
+import json
 
 # load model
 indices = pickle.load(open('book_indices.pkl','rb'))
@@ -33,13 +34,15 @@ def predict():
     result={'title':recommended_books,
        'images':images}
 
+    resultjson = json.dumps(result)
+
 
 
     #return result
 
     # send back to browser
 
-    return result
+    return resultjson
 
 if __name__ == '__main__':
     app.run()
