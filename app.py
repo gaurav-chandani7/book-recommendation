@@ -29,9 +29,11 @@ def predict():
     images = []
     for item in recommended_books:
         images.append(book_img["image_url"].loc[item])
+        
+    return {'title':recommended_books}
 
-    result={'title':recommended_books,
-       'images':images}
+#     result={'title':recommended_books,
+#        'images':images}
 
 
 
