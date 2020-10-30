@@ -30,7 +30,9 @@ def predict():
     for item in recommended_books:
         images.append(book_img["image_url"].loc[item])
         
-    return {'title':recommended_books}
+    output = {'results': recommended_books}
+
+    return output
 
 #     result={'title':recommended_books,
 #        'images':images}
@@ -41,7 +43,7 @@ def predict():
 
     # send back to browser
 
-    return result
+#     return result
 
 if __name__ == '__main__':
     app.run()
