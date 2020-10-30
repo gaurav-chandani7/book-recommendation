@@ -26,13 +26,15 @@ def predict():
     book_indices = [i[0] for i in sim_scores]
     for i in book_indices:
         recommended_books.append(titles[i])
+    
+    output = {'results': recommended_books}
+
+    return output
     images = []
     for item in recommended_books:
         images.append(book_img["image_url"].loc[item])
         
-    output = {'results': recommended_books}
-
-    return output
+    
 
 #     result={'title':recommended_books,
 #        'images':images}
