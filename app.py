@@ -26,18 +26,12 @@ def predict():
     book_indices = [i[0] for i in sim_scores]
     for i in book_indices:
         recommended_books.append(titles[i])
-    
-    output = {'results': recommended_books}
-
-    return output
     images = []
     for item in recommended_books:
         images.append(book_img["image_url"].loc[item])
-        
-    
 
-#     result={'title':recommended_books,
-#        'images':images}
+    result={'title':recommended_books,
+       'images':images}
 
 
 
@@ -45,7 +39,7 @@ def predict():
 
     # send back to browser
 
-#     return result
+    return result
 
 if __name__ == '__main__':
     app.run()
